@@ -1,2 +1,939 @@
-# jhonguillen.github.io
-Repositorio
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestión Integral Consultorías | Expertos en Gestión Humana, Seguridad Social y Nómina</title>
+  <meta name="description" content="Consultoría especializada en Gestión Humana, Seguridad Social, Nómina y Seguridad y Salud en el Trabajo. Soluciones integrales para tu empresa.">
+  <style>
+    :root {
+      --primary-color: #004080;
+      --secondary-color: #0077b6;
+      --accent-color: #00b4d8;
+      --light-color: #f8f9fa;
+      --dark-color: #212529;
+      --success-color: #2e7d32;
+      --warning-color: #fbc02d;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: var(--dark-color);
+      background-color: var(--light-color);
+      scroll-behavior: smooth;
+    }
+    
+    /* Header Styles */
+    header {
+      background: linear-gradient(135deg, rgba(0, 64, 128, 0.9) 0%, rgba(0, 180, 216, 0.8) 100%), 
+                  url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .header-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+      padding: 2rem;
+      background-color: rgba(0, 64, 128, 0.7);
+      border-radius: 10px;
+      backdrop-filter: blur(5px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+    
+    h1 {
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      animation: fadeInDown 1s ease;
+    }
+    
+    .tagline {
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+      font-weight: 300;
+      animation: fadeIn 1.5s ease;
+    }
+    
+    .contact-bar {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 1.5rem;
+      flex-wrap: wrap;
+      animation: fadeInUp 1s ease;
+    }
+    
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background-color: rgba(255, 255, 255, 0.9);
+      color: var(--primary-color);
+      padding: 0.8rem 1.5rem;
+      border-radius: 50px;
+      font-weight: 600;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+    
+    .contact-item:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+    
+    .contact-item i {
+      font-size: 1.2rem;
+    }
+    
+    /* Navigation */
+    nav {
+      background-color: var(--primary-color);
+      padding: 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 0.8rem 1.5rem;
+      border-radius: 50px;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+    
+    nav a:hover, nav a:focus {
+      background-color: rgba(255, 255, 255, 0.2);
+      transform: translateY(-2px);
+    }
+    
+    nav a i {
+      font-size: 1.2rem;
+    }
+    
+    /* Section Styles */
+    section {
+      padding: 4rem 1rem;
+      position: relative;
+    }
+    
+    .section-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      background-color: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      position: relative;
+    }
+    
+    .section-header {
+      padding: 3rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      color: white;
+      min-height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .section-header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(0, 64, 128, 0.8) 0%, rgba(0, 180, 216, 0.7) 100%);
+      z-index: 1;
+    }
+    
+    .section-header-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      position: relative;
+      display: inline-block;
+    }
+    
+    h2::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 4px;
+      background-color: white;
+      border-radius: 2px;
+    }
+    
+    .section-description {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+    
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      padding: 2rem;
+    }
+    
+    .service-card {
+      background-color: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s ease;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+    }
+    
+    .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+    
+    .service-card-header {
+      background-color: var(--primary-color);
+      color: white;
+      padding: 1.5rem;
+      text-align: center;
+    }
+    
+    .service-card-body {
+      padding: 1.5rem;
+    }
+    
+    .service-card h3 {
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+    }
+    
+    .service-list {
+      list-style-type: none;
+    }
+    
+    .service-list li {
+      margin-bottom: 0.8rem;
+      padding-left: 1.5rem;
+      position: relative;
+    }
+    
+    .service-list li::before {
+      content: '✓';
+      color: var(--accent-color);
+      position: absolute;
+      left: 0;
+      font-weight: bold;
+    }
+    
+    /* Image Gallery Styles */
+    .image-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 1rem;
+      padding: 2rem;
+    }
+    
+    .gallery-item {
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+      height: 250px;
+      position: relative;
+    }
+    
+    .gallery-item:hover {
+      transform: scale(1.03);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+    
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    
+    .gallery-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.7);
+      color: white;
+      padding: 0.5rem;
+      text-align: center;
+      transform: translateY(100%);
+      transition: transform 0.3s ease;
+    }
+    
+    .gallery-item:hover .gallery-caption {
+      transform: translateY(0);
+    }
+    
+    /* Specific Section Backgrounds */
+    #sg-sst .section-header {
+      background: url('https://images.unsplash.com/photo-1581093196279-1a5fad2a3b2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+    }
+    
+    #gestion-humana .section-header {
+      background: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+    }
+    
+    #seguridad-social .section-header {
+      background: url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+    }
+    
+    #nomina .section-header {
+      background: url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+    }
+    
+    /* Testimonials Section */
+    .testimonials {
+      background-color: var(--light-color);
+      padding: 4rem 1rem;
+    }
+    
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .testimonial-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      position: relative;
+    }
+    
+    .testimonial-card::before {
+      content: '"';
+      font-size: 5rem;
+      color: var(--accent-color);
+      opacity: 0.2;
+      position: absolute;
+      top: 0;
+      left: 1rem;
+      line-height: 1;
+    }
+    
+    .testimonial-content {
+      margin-bottom: 1.5rem;
+      font-style: italic;
+    }
+    
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    
+    .testimonial-author img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    
+    .author-info h4 {
+      margin-bottom: 0.2rem;
+      color: var(--primary-color);
+    }
+    
+    .author-info p {
+      color: var(--dark-color);
+      opacity: 0.7;
+      font-size: 0.9rem;
+    }
+    
+    /* Footer */
+    footer {
+      background-color: var(--dark-color);
+      color: white;
+      padding: 3rem 1rem;
+      text-align: center;
+    }
+    
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      text-align: left;
+    }
+    
+    .footer-logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: white;
+    }
+    
+    .footer-contact h3, .footer-services h3 {
+      color: var(--accent-color);
+      margin-bottom: 1.5rem;
+      font-size: 1.3rem;
+    }
+    
+    .footer-contact p {
+      margin-bottom: 0.8rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .footer-services ul {
+      list-style-type: none;
+    }
+    
+    .footer-services li {
+      margin-bottom: 0.8rem;
+    }
+    
+    .footer-services a {
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    
+    .footer-services a:hover {
+      color: var(--accent-color);
+    }
+    
+    .copyright {
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2rem;
+      }
+      
+      .tagline {
+        font-size: 1.2rem;
+      }
+      
+      .contact-bar {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+      }
+      
+      .nav-container {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      nav a {
+        width: 100%;
+        justify-content: center;
+      }
+      
+      h2 {
+        font-size: 2rem;
+      }
+      
+      .section-header {
+        padding: 2rem 1rem;
+        min-height: 250px;
+      }
+      
+      .image-gallery {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      }
+      
+      .testimonial-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .image-gallery {
+        grid-template-columns: 1fr;
+      }
+      
+      .section-header {
+        min-height: 200px;
+      }
+      
+      h2 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <header>
+    <div class="header-content">
+      <h1>Gestión Integral Consultorías</h1>
+      <p class="tagline">Expertos en Gestión Humana, Seguridad Social, Nómina y Seguridad y Salud en el Trabajo</p>
+      
+      <div class="contact-bar">
+        <div class="contact-item">
+          <i class="fas fa-phone-alt"></i>
+          <span>312 680 5599</span>
+        </div>
+        <div class="contact-item">
+          <i class="fas fa-envelope"></i>
+          <span>GestionintegralGHSST@GMAIL.COM</span>
+        </div>
+        <div class="contact-item">
+          <i class="fas fa-map-marker-alt"></i>
+          <span>Bogotá, Colombia</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <nav>
+    <div class="nav-container">
+      <a href="#sg-sst"><i class="fas fa-hard-hat"></i> SG-SST</a>
+      <a href="#gestion-humana"><i class="fas fa-users"></i> Gestión Humana</a>
+      <a href="#seguridad-social"><i class="fas fa-shield-alt"></i> Seguridad Social</a>
+      <a href="#nomina"><i class="fas fa-calculator"></i> Nómina</a>
+      <a href="#galeria"><i class="fas fa-images"></i> Galería</a>
+    </div>
+  </nav>
+
+  <section id="sg-sst">
+    <div class="section-container">
+      <div class="section-header">
+        <div class="section-header-content">
+          <h2>Seguridad y Salud en el Trabajo</h2>
+          <p class="section-description">Implementamos sistemas integrales para proteger a tus colaboradores y cumplir con la normativa legal vigente.</p>
+        </div>
+      </div>
+      
+      <div class="service-grid">
+        <div class="service-card">
+          <div class="service-card-header">
+            <h3>Diagnóstico e Implementación</h3>
+          </div>
+          <div class="service-card-body">
+            <ul class="service-list">
+              <li>Diagnóstico inicial del sistema de gestión</li>
+              <li>Auditorías internas y acompañamiento ARL</li>
+              <li>Elaboración de matriz IPER</li>
+              <li>Implementación completa del SG-SST</li>
+              <li>Capacitaciones a todo el personal</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="service-card">
+          <div class="service-card-header">
+            <h3>Documentación Legal</h3>
+          </div>
+          <div class="service-card-body">
+            <ul class="service-list">
+              <li>Elaboración de procedimientos y protocolos</li>
+              <li>Preparación de reportes obligatorios</li>
+              <li>Gestión documental del sistema</li>
+              <li>Actualización normativa permanente</li>
+              <li>Preparación para auditorías externas</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="service-card">
+          <div class="service-card-header">
+            <h3>Programas Especializados</h3>
+          </div>
+          <div class="service-card-body">
+            <ul class="service-list">
+              <li>Programa de Vigilancia Epidemiológica</li>
+              <li>Programa de Salud Mental</li>
+              <li>Conformación de brigadas de emergencia</li>
+              <li>Plan de emergencias y simulacros</li>
+              <li>Programas de promoción y prevención</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="gestion-humana">
+    <div class="section-container">
+      <div class="section-header">
+        <div class="section-header-content">
+          <h2>Gestión Humana Estratégica</h2>
+          <p class="section-description">Transformamos tu área de talento humano en un aliado estratégico para el crecimiento de tu organización.</p>
+        </div>
+      </div>
+      
+      <div class="service-grid">
+        <div class="service-card">
+          <div class="service-card-header">
+            <h3>Ciclo del Empleado</h3>
+          </div>
+          <div class="service-card-body">
+            <ul class="service-list">
+              <li>Reclutamiento y selección de personal</li>
+              <li>Diseño de planes de onboarding</li>
+              <li>Gestión del desempeño</li>
+              <li>Planes de desarrollo profesional</li>
+              <li>Procesos de retiro y desvinculación</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="service-card">
+          <div class="service-card-header">
+            <h3>Gestión de Portales</h3>
+          </div>
+          <div class="service-card-body">
+            <ul class="service-list">
+              <li>Creación de empresas en portales de seguridad social</li>
+              <li>Registro y actualización en PILA (EPS, AFP, ARL)</li>
+              <li>Gestión de usuarios en portales gubernamentales</li>
+              <li>Regulación de cuota SENA</li>
+              <li>Manejo de portales de nómina electrónica</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="service-card">
+          <div class="service-card-header">
+            <h3>Desarrollo Organizacional</h3>
+          </div>
+          <div class="service-card-body">
+            <ul class="service-list">
+              <li>Diseño de perfiles de cargo</li>
+              <li>Planes de sucesión y carrera</li>
+              <li>Capacitación y desarrollo</li>
+              <li>Programas de liderazgo</li>
+              <li>Transformación digital del área</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="seguridad-social">
+    <div class="section-container">
+      <div class="section-header">
+        <div class="section-header-content">
+          <h2>Seguridad Social Integral</h2>
+          <p class="section-description">Gestionamos eficientemente tus obligaciones en seguridad social, garantizando cumplimiento y beneficios para tus empleados.</p>
+        </div>
+      </div>
+      
+      <div class="service-grid">
+        <div class="service-card">
+          <div class="service-card-header">
+            <h3>Gestión de Afiliaciones</h3>
+          </div>
+          <div class="service-card-body">
+            <ul class="service-list">
+              <li>Afiliaciones al sistema de salud</li>
+              <li>Gestión de pensiones obligatorias</li>
+              <li>Registro en ARL</li>
+              <li>Manejo de novedades</li>
+              <li>Asesoría en regímenes especiales</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="service-card">
+          <div class="service-card-header">
+            <h3>Incapacidades y Licencias</h3>
+          </div>
+          <div class="service-card-body">
+            <ul class="service-list">
+              <li>Gestión integral de incapacidades</li>
+              <li>Licencias de maternidad/paternidad</li>
+              <li>Licencias por calamidad</li>
+              <li>Procedimientos ante EPS</li>
+              <li>Seguimiento y control</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="service-card">
+          <div class="service-card-header">
+            <h3>Prestaciones Sociales</h3>
+          </div>
+          <div class="service-card-body">
+            <ul class="service-list">
+              <li>Asesoría en liquidación de prestaciones</li>
+              <li>Gestión de cesantías</li>
+              <li>Primas y vacaciones</li>
+              <li>Planes complementarios de salud</li>
+              <li>Beneficios extralegales</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="nomina">
+    <div class="section-container">
+      <div class="section-header">
+        <div class="section-header-content">
+          <h2>Gestión de Nómina</h2>
+          <p class="section-description">Soluciones precisas y confiables para la administración de tu nómina, cumpliendo con todas las obligaciones legales.</p>
+        </div>
+      </div>
+      
+      <div class="service-grid">
+        <div class="service-card">
+          <div class="service-card-header">
+            <h3>Procesos de Nómina</h3>
+          </div>
+          <div class="service-card-body">
+            <ul class="service-list">
+              <li>Liquidación de nómina mensual/quincenal</li>
+              <li>Cálculo de horas extras y recargos</li>
+              <li>Bonificaciones y comisiones</li>
+              <li>Nóminas especiales (vacaciones, primas)</li>
+              <li>Certificados laborales y de ingresos</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="service-card">
+          <div class="service-card-header">
+            <h3>Aspectos Legales</h3>
+          </div>
+          <div class="service-card-body">
+            <ul class="service-list">
+              <li>Retenciones en la fuente</li>
+              <li>Pagos a seguridad social</li>
+              <li>Reportes a DIAN</li>
+              <li>Certificados tributarios</li>
+              <li>Cumplimiento normativo</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="service-card">
+          <div class="service-card-header">
+            <h3>Sistemas y Tecnología</h3>
+          </div>
+          <div class="service-card-body">
+            <ul class="service-list">
+              <li>Implementación de sistemas de nómina</li>
+              <li>Automatización de procesos</li>
+              <li>Reportes gerenciales</li>
+              <li>Integración con otros sistemas</li>
+              <li>Soluciones en la nube</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="galeria">
+    <div class="section-container">
+      <div class="section-header">
+        <div class="section-header-content">
+          <h2>Galería de Nuestros Servicios</h2>
+          <p class="section-description">Conozca visualmente nuestro trabajo y experiencia en consultoría</p>
+        </div>
+      </div>
+      
+      <div class="image-gallery">
+        <div class="gallery-item">
+          <img src="F_006.jpeg" alt="Tendencias en la gestión del talento humano">
+          <div class="gallery-caption">Tendencias en la gestión del talento humano</div>
+        </div>
+        <div class="gallery-item">
+          <img src="F_001.jpeg" alt="Certificaciones y reconocimientos">
+          <div class="gallery-caption">Certificaciones y reconocimientos</div>
+        </div>
+        <div class="gallery-item">
+          <img src="F_005.jpeg" alt="Equipo de consultores">
+          <div class="gallery-caption">Equipo de consultores</div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Inspecciones de seguridad">
+          <div class="gallery-caption">Inspecciones de seguridad</div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1521791055366-0d553872125f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Reclutamiento de personal">
+          <div class="gallery-caption">Reclutamiento de personal</div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Capacitación empresarial">
+          <div class="gallery-caption">Capacitación empresarial</div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Trabajo en equipo">
+          <div class="gallery-caption">Trabajo en equipo</div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Desarrollo organizacional">
+          <div class="gallery-caption">Desarrollo organizacional</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials">
+    <div class="section-container">
+      <div class="section-header">
+        <div class="section-header-content">
+          <h2>Testimonios de Nuestros Clientes</h2>
+          <p class="section-description">Lo que dicen las empresas que han confiado en nuestros servicios</p>
+        </div>
+      </div>
+      
+      <div class="testimonial-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-content">
+            <p>La implementación del SG-SST fue impecable. Cumplieron con todos los requisitos legales y nos capacitaron adecuadamente. Ahora tenemos un sistema robusto que protege a nuestros colaboradores.</p>
+          </div>
+          <div class="testimonial-author">
+            <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Nicolás Luque">
+            <div class="author-info">
+              <h4>Nicolás Luque</h4>
+              <p>Director General de Portaltex S.A.S.</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="testimonial-card">
+          <div class="testimonial-content">
+            <p>Su asesoría en gestión humana transformó nuestro departamento. Pasamos de ser un área administrativa a un socio estratégico del negocio. Los resultados son evidentes en nuestro clima laboral.</p>
+          </div>
+          <div class="testimonial-author">
+            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Ana Patricia Rodríguez">
+            <div class="author-info">
+              <h4>Ana Patricia Rodríguez</h4>
+              <p>Directora Ejecutiva, Corporación DEF</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="testimonial-card">
+          <div class="testimonial-content">
+            <p>Gracias a su experiencia en nómina y seguridad social, hemos optimizado nuestros procesos reduciendo errores y ahorrando tiempo valioso para nuestro equipo administrativo.</p>
+          </div>
+          <div class="testimonial-author">
+            <img src="https://randomuser.me/api/portraits/men/60.jpg" alt="Maicol Hoyos">
+            <div class="author-info">
+              <h4>Maicol Hoyos</h4>
+              <p>Gerente general almacén STIHL S.A.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-about">
+        <div class="footer-logo">Gestión Integral Consultorías</div>
+        <p>Expertos en brindar soluciones integrales para la gestión de tu talento humano, seguridad social y cumplimiento normativo.</p>
+      </div>
+      
+      <div class="footer-contact">
+        <h3>Contacto</h3>
+        <p><i class="fas fa-user"></i> Jhon Jairo Guillen</p>
+        <p><i class="fas fa-phone-alt"></i> 312 680 5599</p>
+        <p><i class="fas fa-envelope"></i> GestionintegralGHSST@GMAIL.COM</p>
+        <p><i class="fas fa-map-marker-alt"></i> Bogotá, Colombia</p>
+      </div>
+      
+      <div class="footer-services">
+        <h3>Nuestros Servicios</h3>
+        <ul>
+          <li><a href="#sg-sst">Seguridad y Salud en el Trabajo</a></li>
+          <li><a href="#gestion-humana">Gestión Humana</a></li>
+          <li><a href="#seguridad-social">Seguridad Social</a></li>
+          <li><a href="#nomina">Gestión de Nómina</a></li>
+          <li><a href="#galeria">Galería de Servicios</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="copyright">
+      <p>&copy; 2023 Gestión Integral Consultorías. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+</body>
+</html>
